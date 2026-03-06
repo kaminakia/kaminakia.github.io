@@ -2,7 +2,7 @@
 <html lang="en" style="scroll-padding-top: 120px;">
  <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
   <meta name="google-site-verification" content="WaJcerxULuhckSwJ74G1Mj-WfCno4F6sFKklXFN5XhM" />
   <title>
    Kaminakia Adults Only Apartments | Fiscardo - Kefalonia
@@ -28,7 +28,7 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "38.455917",,
+        "latitude": "38.455917",
         "longitude": "20.578139"
       },
       "telephone": "+306959800433",
@@ -165,7 +165,7 @@
 
     header {
       position: relative;
-      height: calc(100vh - 65px); 
+      height: 100vh; 
       display: flex;
       flex-direction: column; 
       align-items: center;
@@ -181,18 +181,128 @@
       display: none;
     }
     /* Navigation - Sticky & Subtle Effects */
+  /* Navigation - Dark Glass Effect για μέγιστη αντίθεση λευκών γραμμάτων */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem; 
+    
+    /* Ημιδιαφανές μαύρο/γκρι (σαν φιμέ τζάμι) για να αναδεικνύεται το λευκό γράμμα */
+    background-color: rgba(0, 0, 0, 0.4); 
+    
+    /* Ισχυρό θόλωμα για να σβήνει το κείμενο από πίσω */
+    backdrop-filter: blur(20px) contrast(1.2); 
+    -webkit-backdrop-filter: blur(20px) contrast(1.2);
+    
+    padding: 1rem 0.5rem; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff !important; /* Καθαρό λευκό */
+    font-weight: 700; /* Έντονα γράμματα */
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    
+    /* Μαύρο περίγραμμα/σκιά γύρω από κάθε γράμμα */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 
+                 0px 0px 10px rgba(0, 0, 0, 0.4);
+                 
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700 !important; /* Χρυσό/κίτρινο στο hover για να ξεχωρίζει */
+    transform: scale(1.05);
+}
+
+/* Κουμπί Γλώσσας */
+#translate-button {
+    color: #ffffff !important;
+    font-weight: 700;
+    border: 2px solid #ffffff !important;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+}
+}
+
+nav a:hover {
+    color: #556b2f; /* Λίγο πιο ανοιχτό λαδί στο hover */
+    transform: translateY(-1px);
+}
+
+/* Προσαρμογή του κουμπιού γλώσσας στο λαδί ύφος */
+#translate-button {
+    color: #3b4228 !important;
+    border: 1px solid rgba(59, 66, 40, 0.3) !important;
+    background: transparent;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #556b2f; /* Λίγο πιο ανοιχτό λαδί στο hover */
+    transform: translateY(-1px);
+}
+
+/* Προσαρμογή του κουμπιού γλώσσας στο λαδί ύφος */
+#translate-button {
+    color: #3b4228 !important;
+    border: 1px solid rgba(59, 66, 40, 0.3) !important;
+    background: transparent;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+}
+
+nav a:hover {
+    color: #888; /* Ήπιο γκρι στο hover για ηρεμία */
+}
+
+/* Προσαρμογή του κουμπιού γλώσσας */
+#translate-button {
+    color: #333333 !important;
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    background: transparent;
+}
+
+/* Mobile Optimization */
+@media screen and (max-width: 768px) {
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem; 
-      background: var(--primary-color);
-      padding: 0.5rem; 
-      box-shadow: 0 4px 8px rgba(0,0,0,0.08); 
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-color);
+        gap: 0.5rem;
+        padding: 0.8rem 0.2rem;
+        flex-wrap: wrap;
     }
+    nav a {
+        font-size: 0.8rem !important;
+        letter-spacing: 0.3px;
+    }
+}
+    
+    nav a {
+        font-size: 0.85rem !important; /* Μεγαλύτερο από το τωρινό αλλά με μέτρο */
+        padding: 0.4rem 0.3rem !important;
+    }
+}
+
+/* Επειδή το nav είναι πλέον fixed, πρέπει να δώσουμε χώρο στο υπόλοιπο περιεχόμενο 
+   να μην κρύβεται από κάτω του */
+body {
+    padding-top: 60px; 
+}
 
     nav a {
       text-decoration: none;
@@ -231,7 +341,7 @@
    
     section {
       max-width: 900px;
-      margin: 3rem auto; 
+      margin: 3rem auto;
       padding: 0 2rem; 
       opacity: 0;
       transform: translateY(40px);
@@ -686,6 +796,37 @@ header h1 {
       .button-group {
         flex-direction: column;
       }
+/* ΔΙΟΡΘΩΣΗ ΓΙΑ ΝΑ ΕΜΦΑΝΙΣΤΟΥΝ ΤΑ ΚΕΙΜΕΝΑ ΠΟΥ ΕΙΝΑΙ ΑΟΡΑΤΑ */
+      .header-content-wrapper {
+        height: auto !important;
+        min-height: 400px;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+      }
+
+      #main-title, #serenity-quote-right {
+        position: relative !important; /* Μετατρέπει τη θέση σε σχετική για να μην "πετάει" το κείμενο */
+        top: auto !important;          /* Ακυρώνει το 95% που το έστελνε εκτός οθόνης */
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        opacity: 1 !important;         /* Διασφαλίζει ότι τα γράμματα δεν είναι διαφανή */
+        transform: none !important;    /* Ακυρώνει τυχόν μετατοπίσεις scale/translate */
+        max-width: 90% !important;     /* Προσαρμόζει το πλάτος στην οθόνη του κινητού */
+        margin: 15px auto !important;  /* Δίνει χώρο ανάμεσα στα κείμενα */
+        text-align: center !important; /* Κεντράρει το περιεχόμενο */
+        font-size: 1.6rem !important;  /* Ιδανικό μέγεθος για ανάγνωση σε κινητό */
+      }
+
+      header h1 {
+        opacity: 1 !important;         /* Εμφανίζει το "Where stillness becomes the luxury" */
+        position: relative !important;
+        top: auto !important;
+        margin-top: 60px !important;
+        font-size: 1.5rem !important;
+      }
     }
   </style>
  </head>
@@ -805,37 +946,48 @@ header h1 {
         }
 
 
-        /* === MOBILE STYLES (max-width: 768px) - ΔΙΟΡΘΩΣΗ: LEFT + ANIMATION === */
-        @media (max-width: 768px) {
-            .header-content-wrapper {
-                height: 400px;
-            }
-            
-            /* ΚΕΙΜΕΝΟ 1: Nurtured by sunlight... (2s Καθυστέρηση + Πιο Αριστερά) */
-            #main-title {
-                top: -50px; 
-                left: 0.1%; /* ΔΙΟΡΘΩΣΗ: Πιο αριστερά */
-                right: auto; 
-                max-width: 65%; 
-                text-align: left; 
-                animation: fadePulseRight 1s ease-out 2s forwards; /* 2s DELAY */
-                opacity: 0; 
-                transform: none; 
-                font-size: clamp(1.8em, 6vw, 2.5em); 
-            }
-            
-            /* ΚΕΙΜΕΝΟ 2: Απόφθεγμα Mind (...Πολύ Κάτω & Δεξιά + 4s Καθυστέρηση) */
-            #serenity-quote-right {
-                top: 95%; 
-                right: 0.1%; 
-                left: auto; 
-                max-width: 70%; 
-                text-align: right; 
-                animation: fadePulseRight 1s ease-out 4s forwards; /* 4s DELAY */
-                opacity: 0; 
-                transform: none; 
-                font-size: clamp(1.8em, 6vw, 2.5em); 
-            }
+        /* === MOBILE STYLES (max-width: 768px) === */
+@media (max-width: 768px) {
+    .header-content-wrapper {
+        height: auto !important; 
+        min-height: 450px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 20px !important;
+    }
+    
+    /* Εμφάνιση των κειμένων χωρίς καθυστέρηση στο κινητό */
+    #main-title, #serenity-quote-right {
+        position: relative !important; /* Σταματάει να "πετάει" σε άσχετα σημεία */
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        opacity: 1 !important; /* Γίνεται άμεσα ορατό */
+        transform: none !important;
+        max-width: 95% !important;
+        text-align: center !important; /* Κεντράρισμα για καλύτερη αισθητική στο κινητό */
+        margin: 15px 0 !important;
+        font-size: 1.7rem !important; /* Σωστό μέγεθος για διάβασμα */
+        animation: none !important; /* Απενεργοποίηση animation που μπορεί να κολλάει */
+    }
+
+    /* Διόρθωση του κεντρικού τίτλου "Where stillness..." */
+    header h1 {
+        opacity: 1 !important;
+        animation: none !important;
+        font-size: 1.5rem !important;
+        margin-top: 80px !important;
+    }
+
+    /* Διόρθωση των παραγράφων στα sections */
+    section p {
+        font-size: 1.1rem !important;
+        line-height: 1.6 !important;
+    }
+}
+}
         }
     </style>
 </div>
@@ -1399,9 +1551,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-<section id="faq" class="faq-wrapper">
-    <h2 class="faq-title" data-el="Συχνές Ερωτήσεις" data-en="Guest Information">Guest Information</h2>
-    </section>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1428,7 +1578,7 @@ document.addEventListener('DOMContentLoaded', function() {
       "name": "What types of apartments are available?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer a limited number of fully equipped apartments with living areas, modern amenities, and private balconies designed for comfort and privacy."
+        "text": "Self catering Apartments & Studios with living areas, modern amenities, and private balconies designed for comfort and privacy."
       }
     },
     {
@@ -1504,7 +1654,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 </style>
 
-<section class="faq-wrapper">
+<section id="faq" class="faq-wrapper">
     <h2 class="faq-title">Guest Information</h2>
     
     <div class="faq-item">
@@ -1529,7 +1679,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <details>
             <summary>Apartment Types</summary>
             <div class="faq-content">
-                We offer a limited number of fully equipped apartments with living areas, modern amenities, and private balconies designed for comfort and privacy.
+                Self catering Apartments & Studios with living areas, modern amenities, and private balconies designed for comfort and privacy.
             </div>
         </details>
     </div>
