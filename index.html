@@ -10,6 +10,15 @@
   <meta name="description" content="Discover Kaminakia Apartments, a serene adults-only sanctuary in Fiscardo, Kefalonia. Experience a peaceful escape with breathtaking sea views and a soothing swimming pool nestled amidst nature's beauty."/>
 
 <link rel="canonical" href="https://kaminakia.com/" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kaminakia.com/" />
+<meta property="og:title" content="Kaminakia Adults Only Apartments | Fiscardo - Kefalonia" />
+<meta property="og:description" content="Discover Kaminakia Apartments, a serene adults-only sanctuary in Fiscardo, Kefalonia." />
+<meta property="og:image" content="https://kaminakia.com/fiskardo-apartments-sea-view-swimming-pool.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -115,7 +124,7 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&amp;family=Poppins:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <style>
@@ -136,17 +145,7 @@
         content: none;
     }
 
-    header {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center;
-      background: url('drone-sea-kaminakia-fiskardo.jpg') no-repeat center center;
-      background-size: cover;
-    }
-    
+       
     
     /* Colors and Thematics */
     :root {
@@ -170,7 +169,7 @@
       flex-direction: column; 
       align-items: center;
       justify-content: center;
-      background: url('hero-fiskardo-apartments-sea-view-swimming-pool.png') no-repeat center center;
+      background: url('hero-fiskardo-apartments-sea-view-swimming-pool.webp') no-repeat center center;
       background-size: cover;
       margin: 0;
       padding: 0;
@@ -440,105 +439,70 @@ body {
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
-    /* Lightbox Effect (Requires JavaScript) */
-    .lightbox {
-      display: none; /* Initially hidden */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85); /* Dark overlay */
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      animation: fadeInLightbox 0.3s ease-out;
-    }
-    .lightbox.active {
-        display: flex;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.6);
-      transform: scale(0.8);
-      animation: scaleInLightbox 0.3s forwards;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 2.5em;
-      cursor: pointer;
-      z-index: 2001;
-      transition: transform 0.2s ease;
-    }
-    .lightbox-close:hover {
-      transform: rotate(90deg);
-    }
-    @keyframes fadeInLightbox {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    @keyframes scaleInLightbox {
-        from { transform: scale(0.7); }
-        to { transform: 1; }
-    }
-     /* Styles for the navigation arrows in the lightbox */
-    .lightbox-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: white;
-        font-size: 3em; /* Larger size for easy clicking */
-        cursor: pointer;
-        z-index: 2001;
-        transition: transform 0.2s ease, opacity 0.2s ease;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for visibility */
-        user-select: none; /* Prevents text selection on double-click */
-    }
+   
+/* --- ΔΙΟΡΘΩΜΕΝΟ LIGHTBOX SYSTEM --- */
+.lightbox {
+    display: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    z-index: 999999 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
-    .lightbox-prev-arrow {
-        left: 20px;
-    }
+.lightbox.active {
+    display: flex !important;
+}
 
-    .lightbox-next-arrow {
-        right: 20px;
-    }
+.lightbox img {
+    max-width: 90% !important;
+    max-height: 85% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    position: relative !important;
+    transform: none !important;
+}
 
-    .lightbox-arrow:hover {
-        transform: translateY(-50%) scale(1.1);
-        opacity: 0.8;
-    }
+.lightbox-close {
+    position: absolute !important;
+    top: 25px !important;
+    right: 35px !important;
+    color: white !important;
+    font-size: 50px !important;
+    cursor: pointer !important;
+    z-index: 1000001 !important;
+}
 
-    /* Hide arrows when lightbox image is too big to show them at the sides */
-    @media screen and (max-width: 768px) {
-        .lightbox-arrow {
-            font-size: 2em;
-            top: 90%; /* Move to bottom on smaller screens */
-            transform: translateY(0);
-            background: rgba(0, 0, 0, 0.4);
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        .lightbox-prev-arrow {
-            left: 50%;
-            margin-left: -40px;
-        }
-        .lightbox-next-arrow {
-            right: 50%;
-            margin-right: -40px;
-        }
-    }
-    /* Contact Form - Subtle Effects */
+.lightbox-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: white !important;
+    font-size: 60px !important;
+    cursor: pointer !important;
+    z-index: 1000001 !important;
+    padding: 20px;
+}
+
+.lightbox-prev-arrow { left: 15px !important; }
+.lightbox-next-arrow { right: 15px !important; }
+
+  /* Contact Form - Subtle Effects */
     form {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem; /* More gap */
-      background-color: var(--primary-color); /* Changed to the primary olive color */
+      gap: 1.2rem;
+      background-color: #989986 !important; /* Το νέο ζεστό καφέ που επέλεξες */
       padding: 2.5rem;
       border-radius: 8px;
       box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
@@ -560,12 +524,13 @@ body {
     .button-group {
         display: flex;
         gap: 1rem;
+    flex-direction: row-reverse;
     }
     
     .button-group button {
         flex: 1;
-        background: #3a4a0f; /* Even darker shade of olive green */
-        color: white; /* White text for better contrast */
+        background: #6e6c60; /* Even darker shade of olive green */
+        color: #ebecd1; /* White text for better contrast */
         border: none;
         padding: 1rem;
         border-radius: 6px;
@@ -833,9 +798,7 @@ header h1 {
  <body>
 <audio id="ambientWater" src="mus.mp3" preload="auto" loop muted
        style="position: absolute; top: -9999px; left: -9999px;"></audio>
-</body>
-</html>
-</audio>
+
   <header>
    <div class="header-content-wrapper">
     
@@ -843,12 +806,6 @@ header h1 {
     Where stillness becomes the luxury.
 </h1>
 
-<style>
-    @keyframes slowFadeIn {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-</style>
 
 <style>
     @keyframes slowFadeIn {
@@ -919,12 +876,12 @@ header h1 {
         /* === DESKTOP/LAPTOP STYLES (>= 1025px) === */
         @media (min-width: 1025px) {
             
-            /* ΚΕΙΜΕΝΟ 1: Nurtured - 2s Καθυστέρηση */
+            /* ΚΕΙΜΕΝΟ 1: Nurtured - 2s Καθυσθήρηση */
             #main-title {
                  animation: fadeScalePulse 1s ease-out 2s forwards; 
             }
 
-             /* ΚΕΙΜΕΝΟ 2: Mind - 4s Καθυστέρηση (2s μετά το Nurtured) */
+             /* ΚΕΙΜΕΝΟ 2: Mind - 4s Καθυσθήρηση (2s μετά το Nurtured) */
              #serenity-quote-right {
                 animation: fadePulseRight 1s ease-out 4s forwards; 
             }
@@ -934,12 +891,12 @@ header h1 {
         /* === TABLET STYLES (769px έως 1024px) === */
         @media (min-width: 769px) and (max-width: 1024px) {
             
-            /* ΚΕΙΜΕΝΟ 1: Nurtured - 2s Καθυστέρηση */
+            /* ΚΕΙΜΕΝΟ 1: Nurtured - 2s Καθυσθήρηση */
             #main-title {
                  animation: fadeScalePulse 1s ease-out 2s forwards; 
             }
 
-            /* ΚΕΙΜΕΝΟ 2: Mind - 4s Καθυστέρηση (2s μετά το Nurtured) */
+            /* ΚΕΙΜΕΝΟ 2: Mind - 4s Καθυσθήρηση (2s μετά το Nurtured) */
             #serenity-quote-right {
                 animation: fadePulseRight 1s ease-out 4s forwards; 
             }
@@ -958,7 +915,7 @@ header h1 {
         padding: 20px !important;
     }
     
-    /* Εμφάνιση των κειμένων χωρίς καθυστέρηση στο κινητό */
+    /* Εμφάνιση των κειμένων χωρίς καθυσθήρηση στο κινητό */
     #main-title, #serenity-quote-right {
         position: relative !important; /* Σταματάει να "πετάει" σε άσχετα σημεία */
         top: auto !important;
@@ -1014,13 +971,13 @@ header h1 {
    <a data-el="Ο Τόπος" data-en="Location" href="#location">
     Location
    </a>
+    <a data-el="Εικόνες" data-en="Gallery" href="#gallery">
+    Gallery
+   </a>
    <a data-el="Διαμονή" data-en="Units" href="#spaces">
     Units
    </a>
-   <a data-el="Εικόνες" data-en="Gallery" href="#gallery">
-    Gallery
-   </a>
-   <a data-el="Επικοινωνία" data-en="Contact" href="#contact">
+      <a data-el="Επικοινωνία" data-en="Contact" href="#contact">
     Contact
    </a>
 <a data-el="Συχνές Ερωτήσεις" data-en="FAQ" href="#faq">
@@ -1074,8 +1031,37 @@ header h1 {
    <p data-el="Λίγο πιο πέρα, πορτοκαλιές και λεμονιές λικνίζονται στο αεράκι, τα άνθη τους γλυκαίνουν τον αέρα με ήρεμη χαρά. Το άρωμα, ο ήχος, η θέα — το καθένα μια υπενθύμιση: έχετε φτάσει σε ένα μέρος όπου ο χρόνος ωριμάζει αργά." data-en="Below, orange and lemon trees sway in the breeze, their blossoms sweetening the air with quiet joy. The scent, the sound, the view — each a gentle reminder: you’ve arrived in a place where time ripens slowly.">
     Below, orange and lemon trees sway in the breeze, their blossoms sweetening the air with quiet joy. The scent, the sound, the view... each a gentle reminder: you’ve arrived in a place where time ripens slowly.
    </p>
-  </section>
-  <section id="spaces">
+
+</section>
+
+<section id="gallery">
+    <h2 data-el="Φωτογραφίες – Στιγμές Γαλήνης" data-en="Gallery - Moments of Serenity">
+        Gallery - Moments of Serenity
+    </h2>
+    <div class="gallery">
+        <img loading="lazy" alt="Panoramic sea-view kefalonia fiskardo" data-large-src="panoramic-sea-view-swimming-pool-kefalonia.webp" src="panoramic-sea-view-swimming-pool-kefalonia.webp"/>
+        <img loading="lazy" alt="Swimming pool with a view of the sea and mountains" data-large-src="fiskardo-apartments-sea-view-swimming-pool.webp" src="fiskardo-apartments-sea-view-swimming-pool.webp"/>
+        <img loading="lazy" alt="metal swing Kminakia Adults Only Apartments" data-large-src="kaminakia-boutique-hotel-swing.webp" src="kaminakia-boutique-hotel-swing.webp"/>
+        <img loading="lazy" alt="Cat sleeping free parking on site" data-large-src="free-parking-kaminakia-cat.webp" src="free-parking-kaminakia-cat.webp"/>
+        <img loading="lazy" alt="Lavender flowers in the garden with a distant sea view" data-large-src="nature-fiskardo-relax.webp" src="nature-fiskardo-relax.webp"/>
+        <img loading="lazy" alt="Garden pathway leading to the sea with lush greenery" data-large-src="entrance-boutique-hotel-fiskardo-kefalonia.webp" src="entrance-boutique-hotel-fiskardo-kefalonia.webp"/>
+        <img loading="lazy" alt="Traditional welcoming natural products Kaminakia" data-large-src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp" src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp"/>
+        <img loading="lazy" alt="Stone stairs surrounded by vibrant bougainvillea" data-large-src="kaminakia-apartments-entrance-staircase.webp" src="kaminakia-apartments-entrance-staircase.webp"/>
+        <img loading="lazy" alt="Sunset over the sea with a sailboat" data-large-src="veranda-sea-view-kaminakia-apartments.webp" src="veranda-sea-view-kaminakia-apartments.webp"/>
+        <img loading="lazy" alt="Romance, atmospheric evening in fiskardo" data-large-src="romantic-evening-kefalonia-apartments.webp" src="romantic-evening-kefalonia-apartments.webp"/>
+        <img loading="lazy" alt="Bedroom interior with a queen-size bed and a view to the balcony" data-large-src="studio-fiskardo-bedroom-kaminakia.webp" src="studio-fiskardo-bedroom-kaminakia.webp"/>
+        <img loading="lazy" alt="Living area and kitchen interior, designed for comfort" data-large-src="fiskardo-apartments-sofa-beds.webp" src="fiskardo-apartments-sofa-beds.webp"/>
+        <img loading="lazy" alt="Living area and kitchen interior front row" data-large-src="kaminakia-apartments-fiskardo-living-room.webp" src="kaminakia-apartments-fiskardo-living-room.webp"/>
+        <img loading="lazy" alt="Sparkling clean bathroom" data-large-src="luxury-bathroom-clean-fresh-kaminakia.webp" src="luxury-bathroom-clean-fresh-kaminakia.webp"/>
+        <img loading="lazy" alt="Kaminakia Apartments from a distance, surrounded by nature" data-large-src="drone-sea-kaminakia-fiskardo.jpg" src="drone-sea-kaminakia-fiskardo.jpg"/>
+        <img loading="lazy" alt="Booking.com high rating" data-large-src="award-gratitude-Kaminakia-top-choice.png" src="award-gratitude-Kaminakia-top-choice.png"/>
+        <img loading="lazy" alt="recommended on tripadvisor" data-large-src="recommended-on-tripadvisor.webp" src="recommended-on-tripadvisor.webp"/>
+        <img loading="lazy" alt="Certified" data-large-src="logo.png" src="logo.png"/>
+
+    </div>
+</section>
+
+<section id="spaces">
    <h2 data-el="Κατάλυμα – Επιλέξτε το δικό σας καταφύγιο" data-en="Choose Your Perfect Sanctuary">
     Choose Your Perfect Sanctuary
    </h2>
@@ -1201,50 +1187,10 @@ All units are adults-only, non smoking and feature private sea-view verandas.
     </ul>
    </section>
   </section>
-<section id="gallery">
-   <h2 data-el="Φωτογραφίες – Στιγμές Γαλήνης" data-en="Gallery - Moments of Serenity">
-    Gallery - Moments of Serenity
-   </h2>
-   <div class="gallery">
-    <img alt="Panoramic sea-view kefalonia fiskardo" data-large-src="panoramic-sea-view-swimming-pool-kefalonia.webp" src="panoramic-sea-view-swimming-pool-kefalonia.webp"/>
-<img alt="Swimming pool with a view of the sea and mountains" data-large-src="fiskardo-apartments-sea-view-swimming-pool.webp" src="fiskardo-apartments-sea-view-swimming-pool.webp"/>
 
-
-  
-    <img alt="metal swing Kminakia Adults Only Apartments" data-large-src="kaminakia-boutique-hotel-swing.webp" src="kaminakia-boutique-hotel-swing.webp"/>
-   
-    <img alt="Cat sleeping free parking on site" data-large-src="free-parking-kaminakia-cat.webp" src="free-parking-kaminakia-cat.webp"/>
-    <img alt="Lavender flowers in the garden with a distant sea view" data-large-src="nature-fiskardo-relax.webp" src="nature-fiskardo-relax.webp"/>
-    <img alt="Garden pathway leading to the sea with lush greenery" data-large-src="entrance-boutique-hotel-fiskardo-kefalonia.webp" src="entrance-boutique-hotel-fiskardo-kefalonia.webp"/>
-    <img alt="Traditional welcoming natural products Kaminakia" data-large-src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp" src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp"/>
-    <img alt="Stone stairs surrounded by vibrant bougainvillea" data-large-src="kaminakia-apartments-entrance-staircase.webp" src="kaminakia-apartments-entrance-staircase.webp"/>
-    
-    <img alt="Sunset over the sea with a sailboat" data-large-src="veranda-sea-view-kaminakia-apartments.webp" src="veranda-sea-view-kaminakia-apartments.webp"/>
-    <img alt="Romance, atmospheric evening in fiskardo" data-large-src="romantic-evening-kefalonia-apartments.webp" src="romantic-evening-kefalonia-apartments.webp"/>
-   
-    <img alt="Bedroom interior with a queen-size bed and a view to the balcony" data-large-src="studio-fiskardo-bedroom-kaminakia.webp" src="studio-fiskardo-bedroom-kaminakia.webp"/>
-    <img alt="Living area and kitchen interior, designed for comfort" data-large-src="fiskardo-apartments-sofa-beds.webp" src="fiskardo-apartments-sofa-beds.webp"/>
-<img alt="Living area and kitchen interior front row" data-large-src="kaminakia-apartments-fiskardo-living-room.webp" src="kaminakia-apartments-fiskardo-living-room.webp"/>
-    <img alt="Sparkling clean bathroom" data-large-src="luxury-bathroom-clean-fresh-kaminakia.webp" src="luxury-bathroom-clean-fresh-kaminakia.webp"/>
-    <img alt="Kaminakia Apartments from a distance, surrounded by nature" data-large-src="drone-sea-kaminakia-fiskardo.jpg" src="drone-sea-kaminakia-fiskardo.jpg"/>
-    <img alt="Gratitude" data-large-src="award-gratitude-Kaminakia-top-choice.png" src="award-gratitude-Kaminakia-top-choice.png"/>
-   </div>
-  </section>
-  <div class="lightbox">
-   <span class="lightbox-close">
-    ×
-   </span>
-   <span class="lightbox-arrow lightbox-prev-arrow">
-    &lt;
-   </span>
-   <span class="lightbox-arrow lightbox-next-arrow">
-    &gt;
-   </span>
-   <img alt="Large image" src=""/>
-  </div>
   <section id="contact">
-   <h2 data-el="Επικοινωνία &amp; Κρατήσεις – Μια προσωπική επαφή" data-en="Contact &amp; Reservations - A Personal Touch">
-    Contact &amp; Reservations - A Personal Touch
+   <h2 data-el="Επικοινωνία & Κρατήσεις – Μια προσωπική επαφή" data-en="Contact & Reservations - A Personal Touch">
+    Contact & Reservations - A Personal Touch
    </h2>
    <p data-el="Κάθε απάντηση προέρχεται απευθείας από εμάς, όχι από bots ή μηχανές κρατήσεων, έτσι ώστε να μπορούμε να προσαρμόσουμε τη διαμονή σας στις μοναδικές σας ανάγκες. Ο πιο γρήγορος τρόπος να επικοινωνήσετε μαζί μας είναι το WhatsApp, αλλά μπορείτε επίσης να μας στείλετε email. Χρησιμοποιώντας την παρακάτω φόρμα, μπορείτε να επιλέξετε οποιαδήποτε από τις δύο επιλογές με ένα κλικ." data-en="Every reply comes directly from us. No bots, no booking engines, so we can tailor your stay to your unique needs. The quickest way to reach us is WhatsApp, and you can also email us. Using the form below, you can choose either option with a single click.">
 
@@ -1277,6 +1223,7 @@ All units are adults-only, non smoking and feature private sea-view verandas.
     <option value="+358">Finland (+358)</option>
     <option value="+33">France (+33)</option>
     <option value="+49">Germany (+49)</option>
+    <option value="+30">Greece (+30)</option> 
     <option value="+36">Hungary (+36)</option>
     <option value="+354">Iceland (+354)</option>
     <option value="+353">Ireland (+353)</option>
@@ -1321,6 +1268,7 @@ All units are adults-only, non smoking and feature private sea-view verandas.
     <option value="Finnish">Finnish</option>
     <option value="French">French</option>
     <option value="German">German</option>
+    <option value="Greek">Greek</option>
     <option value="Hungarian">Hungarian</option>
     <option value="Icelandic">Icelandic</option>
     <option value="Irish">Irish</option>
@@ -1377,10 +1325,10 @@ All units are adults-only, non smoking and feature private sea-view verandas.
 
 <div class="button-group">
     <button id="send-whatsapp" type="button">
-        <i class="fab fa-whatsapp"></i> Send to WhatsApp
+        <i class="fab fa-whatsapp"></i> WhatsApp
     </button>
     <button id="send-email" type="submit">
-        <i class="fas fa-envelope"></i> Send to Email
+        <i class="fas fa-envelope"></i> E-mail
     </button>
 </div>
 </form>
@@ -1401,6 +1349,13 @@ All units are adults-only, non smoking and feature private sea-view verandas.
     <i class="fas fa-volume-up" id="mute-toggle"></i>
 </div>
 
+<div class="lightbox">
+    <span class="lightbox-close">×</span>
+    <span class="lightbox-arrow lightbox-prev-arrow"><</span>
+    <span class="lightbox-arrow lightbox-next-arrow">></span>
+    <img alt="Large image" src=""/>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -1413,7 +1368,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 2. Lightbox Functionality
+    // 2. Lightbox Functionality - ΧΕΙΡΟΥΡΓΙΚΗ ΔΙΟΡΘΩΣΗ
     const galleryImages = document.querySelectorAll('.gallery img');
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = document.querySelector('.lightbox img');
@@ -1423,27 +1378,46 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentImageIndex = 0;
 
     function showImage(index) {
-        if (index < 0) currentImageIndex = galleryImages.length - 1;
-        else if (index >= galleryImages.length) currentImageIndex = 0;
-        else currentImageIndex = index;
+        if (index < 0) index = galleryImages.length - 1;
+        if (index >= galleryImages.length) index = 0;
+        currentImageIndex = index;
         const img = galleryImages[currentImageIndex];
+        
+        // Καθαρισμός styles για απόλυτο κεντράρισμα βάσει CSS
+        lightboxImg.style.cssText = ""; 
+        
         lightboxImg.src = img.getAttribute('data-large-src') || img.src;
-        lightboxImg.style.animation = 'none';
-        lightboxImg.offsetHeight;
-        lightboxImg.style.animation = 'scaleInLightbox 0.3s forwards';
     }
 
+    // Άνοιγμα Lightbox και Πάγωμα Scroll
     galleryImages.forEach((img, index) => {
         img.addEventListener('click', () => {
             lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
             showImage(index);
         });
     });
 
-    lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; 
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    lightbox.addEventListener('click', (e) => { 
+        if (e.target === lightbox) closeLightbox(); 
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") showImage(currentImageIndex + 1);
+        if (e.key === "ArrowLeft") showImage(currentImageIndex - 1);
+    });
+
     nextArrow.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentImageIndex + 1); });
     prevArrow.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentImageIndex - 1); });
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
 
     // 3. Section Reveal Effect
     const sections = document.querySelectorAll('section');
