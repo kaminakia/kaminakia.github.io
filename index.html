@@ -137,7 +137,9 @@
       font-family: 'Poppins', sans-serif;
       color: #333;
       background-color: #E8F0D0;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Κλειδώνει την οριζόντια κίνηση */
+      width: 100%;
+      position: relative;
     }
 
     body::before, body::after {
@@ -935,7 +937,7 @@ header h1 {
         opacity: 1 !important;
         animation: none !important;
         font-size: 1.5rem !important;
-        margin-top: 80px !important;
+        margin-top: 60px !important;
     }
 
     /* Διόρθωση των παραγράφων στα sections */
@@ -1336,13 +1338,13 @@ All units are adults-only, non smoking and feature private sea-view verandas.
 <div class="How-to-reach-us" style="text-align: center; margin-top: 20px;">
     <a href="https://www.google.com/maps/dir/?api=1&destination=38.4555,20.5755" target="_blank" 
        style="display: inline-block; padding: 10px 20px; border: 1px solid var(--secondary-color); color: var(--secondary-color); text-decoration: none; border-radius: 4px; font-family: 'Poppins', sans-serif;">
-        📍 Get Directions to Kaminakia
+        How To Reach Us
     </a>
 </div>
 </section>
 
 <footer>
-    © 2026 Kaminakia Adults Only Apartments, Fiscardo — Serene living by the sea.
+    © 2026 Kaminakia Hospitality — Serene living by the sea.
 </footer>
 
 <div class="audio-control">
@@ -1368,7 +1370,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 2. Lightbox Functionality - ΧΕΙΡΟΥΡΓΙΚΗ ΔΙΟΡΘΩΣΗ
+    // 2. Lightbox Functionality 
     const galleryImages = document.querySelectorAll('.gallery img');
     const lightbox = document.querySelector('.lightbox');
     const lightboxImg = document.querySelector('.lightbox img');
