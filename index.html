@@ -844,7 +844,7 @@ header h1 {
             display: block; 
         }
 
-        /* === ΤΟΠΟΘΕΤΗΣΗ ΚΑΙ ΕΙΔΙΚΕΣ ΡΥΘΜΙΣΕΙΣ DESKTOP/LAPTOP (ΓΕΝΙΚΟ) === */
+       /* === ΤΟΠΟΘΕΤΗΣΗ ΚΑΙ ΕΙΔΙΚΕΣ ΡΥΘΜΙΣΕΙΣ DESKTOP/LAPTOP (ΓΕΝΙΚΟ) === */
 
         /* ΑΡΙΣΤΕΡΟ ΚΕΙΜΕΝΟ */
         #main-title {
@@ -875,93 +875,78 @@ header h1 {
 
         /* === DESKTOP/LAPTOP STYLES (>= 1025px) === */
         @media (min-width: 1025px) {
-            
-            /* ΚΕΙΜΕΝΟ 1: Nurtured - 2s Καθυσθήρηση */
             #main-title {
                  animation: fadeScalePulse 1s ease-out 2s forwards; 
             }
-
-             /* ΚΕΙΜΕΝΟ 2: Mind - 4s Καθυσθήρηση (2s μετά το Nurtured) */
              #serenity-quote-right {
                 animation: fadePulseRight 1s ease-out 4s forwards; 
             }
         }
 
-
         /* === TABLET STYLES (769px έως 1024px) === */
         @media (min-width: 769px) and (max-width: 1024px) {
-            
-            /* ΚΕΙΜΕΝΟ 1: Nurtured - 2s Καθυσθήρηση */
             #main-title {
                  animation: fadeScalePulse 1s ease-out 2s forwards; 
             }
-
-            /* ΚΕΙΜΕΝΟ 2: Mind - 4s Καθυσθήρηση (2s μετά το Nurtured) */
             #serenity-quote-right {
                 animation: fadePulseRight 1s ease-out 4s forwards; 
             }
         }
 
-
         /* === MOBILE STYLES (max-width: 768px) === */
-@media (max-width: 768px) {
-    .header-content-wrapper {
-        height: auto !important; 
-        min-height: 450px !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        padding: 20px !important;
-    }
-    
-    /* Εμφάνιση των κειμένων χωρίς καθυσθήρηση στο κινητό */
-    #main-title, #serenity-quote-right {
-        position: relative !important; /* Σταματάει να "πετάει" σε άσχετα σημεία */
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        opacity: 1 !important; /* Γίνεται άμεσα ορατό */
-        transform: none !important;
-        max-width: 95% !important;
-        text-align: center !important; /* Κεντράρισμα για καλύτερη αισθητική στο κινητό */
-        margin: 15px 0 !important;
-        font-size: 1.7rem !important; /* Σωστό μέγεθος για διάβασμα */
-        animation: none !important; /* Απενεργοποίηση animation που μπορεί να κολλάει */
-    }
+        @media (max-width: 768px) {
+            html, body {
+                width: 100%;
+                max-width: 100%;
+                overflow-x: hidden; 
+                position: relative;
+                touch-action: pan-y; /* Σταματάει το κολύμπημα */
+                margin: 0;
+                padding: 0;
+            }
 
-    /* Διόρθωση του κεντρικού τίτλου "Where stillness..." */
-    header h1 {
-        opacity: 1 !important;
-        animation: none !important;
-        font-size: 1.5rem !important;
-        margin-top: 10px !important;
-    }
+            .header-content-wrapper {
+                height: auto !important; 
+                min-height: 350px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important; /* Σπρώχνει το περιεχόμενο πάνω */
+                align-items: center !important;
+                padding: 10px !important;
+            }
+            
+            #main-title, #serenity-quote-right {
+                position: relative !important; 
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                opacity: 1 !important; 
+                transform: none !important;
+                max-width: 95% !important;
+                text-align: center !important; 
+                margin: 10px 0 !important;
+                font-size: 1.5rem !important; 
+                animation: none !important; 
+            }
 
-    /* Διόρθωση των παραγράφων στα sections */
-    section p {
-        font-size: 1.1rem !important;
-        line-height: 1.6 !important;
-    }
-}
-}
+            header h1 {
+                opacity: 1 !important;
+                animation: none !important;
+                font-size: 1.3rem !important;
+                margin-top: 65px !important; /* Ανεβάζει τον τίτλο ψηλά κάτω από το nav */
+                text-align: center !important;
+            }
+
+            section p {
+                font-size: 1.1rem !important;
+                line-height: 1.6 !important;
+                text-align: left !important;
+            }
         }
     </style>
-</div>
-</div>
-</div>
-
-</div>
-
- </h1>
- 
-
-    </span>
-   </h1>
   </header>
 
   <nav>
-
    <a data-el="Καλωσόρισμα" data-en="Welcome" href="#welcome">
     A Sanctuary
    </a>
@@ -1342,7 +1327,7 @@ All units are adults-only, non smoking and feature private sea-view verandas.
 </section>
 
 <footer>
-    © 2026 Kaminakia Hospitality2 — Serene living by the sea.
+    © 2026 Kaminakia Hospitality3 — Serene living by the sea.
 </footer>
 
 <div class="audio-control">
