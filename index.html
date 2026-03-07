@@ -69,7 +69,7 @@
     {
       "@type": "OfferCatalog",
       "name": "Accommodation Options",
-      "itemListElement": [
+  "itemListElement": [
         {
           "@type": "OfferCatalog",
           "name": "1. Studio (21m²): The Explorer’s Nest",
@@ -109,7 +109,7 @@
           "itemOffered": {
             "@type": "Apartment",
             "name": "Apartment 6-7 (42m²)",
-            "description": "Upper-floor unit providing  all features of Apartment 1-4, with the added benefit of enhanced privacy and elevated sea views.",
+            "description": "Upper-floor unit providing all features of Apartment 1-4, with the added benefit of enhanced privacy and elevated sea views.",
             "floorSize": {"@type": "QuantitativeValue", "value": 42, "unitCode": "SQM"},
             "numberOfBedrooms": 1,
             "occupancy": {"@type": "QuantitativeValue", "value": 3, "unitCode": "C62"},
@@ -179,23 +179,17 @@
     .header-background, .header-video {
       display: none;
     }
-    /* Navigation - Sticky & Subtle Effects */
-  /* Navigation - Dark Glass Effect για μέγιστη αντίθεση λευκών γραμμάτων */
+    /* --- NAVIGATION: UNIFIED & CLEAN --- */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.2rem; 
-    
-    /* Ημιδιαφανές μαύρο/γκρι (σαν φιμέ τζάμι) για να αναδεικνύεται το λευκό γράμμα */
-    background-color: rgba(0, 0, 0, 0.4); 
-    
-    /* Ισχυρό θόλωμα για να σβήνει το κείμενο από πίσω */
-    backdrop-filter: blur(20px) contrast(1.2); 
-    -webkit-backdrop-filter: blur(20px) contrast(1.2);
-    
-    padding: 1rem 0.5rem; 
-    position: fixed; 
+    gap: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(15px) contrast(1.2);
+    -webkit-backdrop-filter: blur(15px) contrast(1.2);
+    padding: 0.1rem 0.4rem;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -205,138 +199,74 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #ffffff !important; /* Καθαρό λευκό */
-    font-weight: 700; /* Έντονα γράμματα */
-    font-size: 0.95rem;
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
-    
-    /* Μαύρο περίγραμμα/σκιά γύρω από κάθε γράμμα */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8), 
-                 0px 0px 10px rgba(0, 0, 0, 0.4);
-                 
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    padding: 0.5rem;
+    position: relative;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #ffd700 !important; /* Χρυσό/κίτρινο στο hover για να ξεχωρίζει */
-    transform: scale(1.05);
+    color: #ffd700 !important;
+    transform: translateY(-2px);
 }
 
-/* Κουμπί Γλώσσας */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 #translate-button {
     color: #ffffff !important;
     font-weight: 700;
-    border: 2px solid #ffffff !important;
+    border: 1px solid #ffffff !important;
     background: rgba(255, 255, 255, 0.1);
     padding: 4px 12px;
-}
-}
-
-nav a:hover {
-    color: #556b2f; /* Λίγο πιο ανοιχτό λαδί στο hover */
-    transform: translateY(-1px);
-}
-
-/* Προσαρμογή του κουμπιού γλώσσας στο λαδί ύφος */
-#translate-button {
-    color: #3b4228 !important;
-    border: 1px solid rgba(59, 66, 40, 0.3) !important;
-    background: transparent;
-    padding: 4px 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-nav a:hover {
-    color: #556b2f; /* Λίγο πιο ανοιχτό λαδί στο hover */
-    transform: translateY(-1px);
-}
-
-/* Προσαρμογή του κουμπιού γλώσσας στο λαδί ύφος */
-#translate-button {
-    color: #3b4228 !important;
-    border: 1px solid rgba(59, 66, 40, 0.3) !important;
-    background: transparent;
-    padding: 4px 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-}
-
-nav a:hover {
-    color: #888; /* Ήπιο γκρι στο hover για ηρεμία */
-}
-
-/* Προσαρμογή του κουμπιού γλώσσας */
-#translate-button {
-    color: #333333 !important;
-    border: 1px solid rgba(0,0,0,0.2) !important;
-    padding: 4px 10px;
     border-radius: 4px;
+    cursor: pointer;
     font-size: 0.8rem;
-    background: transparent;
+    transition: all 0.3s ease;
 }
 
-/* Mobile Optimization */
+#translate-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 @media screen and (max-width: 768px) {
     nav {
-        gap: 0.5rem;
+        gap: 0.4rem;
         padding: 0.8rem 0.2rem;
         flex-wrap: wrap;
     }
     nav a {
-        font-size: 0.8rem !important;
-        letter-spacing: 0.3px;
-    }
-}
-    
-    nav a {
-        font-size: 0.85rem !important; /* Μεγαλύτερο από το τωρινό αλλά με μέτρο */
-        padding: 0.4rem 0.3rem !important;
+        font-size: 0.75rem !important;
+        padding: 0.3rem;
     }
 }
 
-/* Επειδή το nav είναι πλέον fixed, πρέπει να δώσουμε χώρο στο υπόλοιπο περιεχόμενο 
-   να μην κρύβεται από κάτω του */
 body {
-    padding-top: 60px; 
+    padding-top: 5px; /* Ενιαίο padding για να μην κρύβεται το περιεχόμενο */
 }
 
-    nav a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 1.0rem;
-      transition: color 0.4s ease, transform 0.4s ease; 
-      padding: 0.2rem 0.5rem; 
-      position: relative;
-    }
-
-    nav a:hover {
-      color: #ccc; 
-      transform: translateY(-2px); 
-    }
-
-    nav a::after { 
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      background: #ccc;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: width 0.3s ease-in-out;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-    @keyframes fadeInNav {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeInNav {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
    
     section {
       max-width: 900px;
@@ -515,12 +445,17 @@ body {
       font-family: 'Lora', serif;
       font-size: 1em;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
+     }
     input:focus, textarea:focus, select:focus {
-      border-color: #f0f8e5; /* Adjusted to a lighter green for contrast */
-      box-shadow: 0 0 0 3px rgba(240, 248, 229, 0.5); /* Adjusted shadow color */
-      outline: none; /* Removes default outline */
+      border-color: #f0f8e5; 
+      box-shadow: 0 0 0 3px rgba(240, 248, 229, 0.5); 
+      outline: none; 
     }
+    /* Διόρθωση εμφάνισης Flatpickr */
+    .flatpickr-day { color: #333 !important; opacity: 1 !important; }
+    .flatpickr-day.nextMonthDay, .flatpickr-day.prevMonthDay { color: #777 !important; opacity: 0.8 !important; }
+    .flatpickr-day.flatpickr-disabled { color: #d0d0d0 !important; cursor: not-allowed !important; opacity: 0.3 !important; }
+    .flatpickr-day.selected { background: #4B5F17 !important; border-color: #4B5F17 !important; color: white !important; }
     .button-group {
         display: flex;
         gap: 1rem;
@@ -981,12 +916,14 @@ header h1 {
         At the northern tip of Kefalonia, where the Ionian Sea softly embraces the shore, Kaminakia invites you to slow down.
     </p>
 
-    <p>
+   <p>
         Set above a small cove and surrounded by olive and cypress trees, our adults-only apartments offer a quiet sanctuary where sea views and gentle rhythms shape each day.
     </p>
 
+    <p>
         <span data-el="Περισσότερο από ενα απλό κατάλυμα, τα Καμινάκια είναι μια ήσυχη πρόσκληση: να ξεκουραστείτε βαθιά, να διαβάσετε στοχαστικά, να αναπνεύσετε ελεύθερα." data-en="More than a place to stay, Kaminakia is an invitation to rest deeply, breathe freely, and let time unfold at its own unhurried pace.">
-       More than a place to stay, Kaminakia is an invitation to rest deeply, breathe freely, and let time unfold at its own unhurried pace.
+            More than a place to stay, Kaminakia is an invitation to rest deeply, breathe freely, and let time unfold at its own unhurried pace.
+        </span>
     </p>
      </section>
   <section id="ethos">
@@ -1057,11 +994,11 @@ All units are adults-only, non smoking and feature private sea-view verandas. ">
 
 All units are adults-only, non smoking and feature private sea-view verandas. 
 </p>
-<p style="font-style: italic; color: #5a6b2a; text-align: center; max-width: 720px; margin: 1rem auto 2.5rem; line-height: 1.7; font-size: 0.95em; opacity: 0.8; border-top: 1px solid var(--secondary-color); padding-top: 1rem;"
-<p data-el="Αν και αυτές οι περιγραφές προσφέρουν καθοδήγηση, επιλέξτε την επιλογή που ταιριάζει καλύτερα στις ανάγκες και τις προτιμήσεις σας." data-en=" While these descriptions offer guidance, feel free to choose the option that best suits your needs and preferences.">
-    While these descriptions offer guidance, feel free to choose the option that best suits your needs and preferences.
+<p style="font-style: italic; color: #5a6b2a; text-align: center; max-width: 720px; margin: 1rem auto 2.5rem; line-height: 1.7; font-size: 0.95em; opacity: 0.8; border-top: 1px solid var(--secondary-color); padding-top: 1rem;">
+    <span data-el="Αν και αυτές οι περιγραφές προσφέρουν καθοδήγηση, επιλέξτε την επιλογή που ταιριάζει καλύτερα στις ανάγκες και τις προτιμήσεις σας." data-en="While these descriptions offer guidance, feel free to choose the option that best suits your needs and preferences.">
+        While these descriptions offer guidance, feel free to choose the option that best suits your needs and preferences.
+    </span>
 </p>
-   </p>
    <section class="accommodation-type">
     <h3 data-el="1. Στούντιο (21μ²): The Explorer’s Nest" data-en="1. Studio (21m²): The Explorer’s Nest">
      1. Studio (21m²): The Explorer’s Nest
@@ -1186,8 +1123,7 @@ All units are adults-only, non smoking and feature private sea-view verandas.
    data-el="Ακολουθώντας το πνεύμα αυτού του τόπου, υποδεχόμαστε συνειδητά έναν περιορισμένο αριθμό επισκεπτών κάθε φορά, επιτρέποντας στον χώρο να παραμένει ήσυχος και ατάραχος. Εκτιμούμε την κατανόησή σας σε περίπτωση που το ημερολόγιό μας είναι περιστασιακά πλήρες.">
   To ensure Kaminakia remains quiet and unhurried, we can only welcome a limited number of guests at any time. We appreciate your understanding should you find our calendar occasionally full.
 </p>
-</p>
-</p></p>
+
    <form id="contact-form" novalidate>
     <input name="_captcha" type="hidden" value="false"/>
     <input id="name" name="name" placeholder="Full Name" required="" type="text"/>
@@ -1306,8 +1242,17 @@ All units are adults-only, non smoking and feature private sea-view verandas.
     Apartment 6-7
 </label>
 
-<textarea id="message" name="message" placeholder="Remarks" rows="6"></textarea>
+<select id="discovery-source" name="discovery_source" required>
+    <option value="" disabled selected data-en="How did you find us?" data-el="Πώς μας βρήκατε;">How did you find us?</option>
+    <option value="Google" data-en="Google Search / Maps" data-el="Αναζήτηση Google / Χάρτες">Google Search / Maps</option>
+    <option value="Booking.com" data-en="Found on Booking.com" data-el="Σας είδα στην Booking.com">Found on Booking.com</option>
+    <option value="Social Media" data-en="Social Media (Instagram / FB)" data-el="Social Media (Instagram / FB)">Social Media (Instagram / FB)</option>
+    <option value="Recommendation" data-en="Friend / Recommendation" data-el="Από φίλο / Σύσταση">Friend / Recommendation</option>
+    <option value="Returning Guest" data-en="Returning Guest" data-el="Είμαι παλιός πελάτης">Returning Guest</option>
+    <option value="Other" data-en="Other" data-el="Άλλο">Other</option>
+</select>
 
+<textarea id="message" name="message" placeholder="Remarks" rows="6"></textarea>
 <div class="button-group">
     <button id="send-whatsapp" type="button">
         <i class="fab fa-whatsapp"></i> WhatsApp
@@ -1327,7 +1272,7 @@ All units are adults-only, non smoking and feature private sea-view verandas.
 </section>
 
 <footer>
-    © 2026 Kaminakia Hospitality3 — Serene living by the sea.
+    © 2026 Kaminakia Hospitality — Serene living by the sea.
 </footer>
 
 <div class="audio-control">
@@ -1455,26 +1400,53 @@ document.addEventListener('DOMContentLoaded', function() {
     const sendEmailButton = document.getElementById('send-email');
     const whatsappNumber = "306959800433";
 
-    flatpickr("#checkin", { dateFormat: "d/m/Y", minDate: "today" });
-    flatpickr("#checkout", { dateFormat: "d/m/Y", minDate: "today" });
+    const checkinPicker = flatpickr("#checkin", { 
+        dateFormat: "d/m/Y", 
+        minDate: "today",
+        onChange: function(selectedDates) {
+            if (selectedDates.length === 0) return;
+            const nextDay = new Date(selectedDates[0]);
+            nextDay.setDate(nextDay.getDate() + 1);
+            checkoutPicker.set("minDate", nextDay);
+            
+            // Αν το checkout είναι ήδη επιλεγμένο και είναι πριν το νέο checkin, καθάρισέ το
+            if (checkoutPicker.selectedDates[0] <= selectedDates[0]) {
+                checkoutPicker.clear();
+            }
+        }
+    });
 
-    function validateForm() {
+    const checkoutPicker = flatpickr("#checkout", { 
+        dateFormat: "d/m/Y", 
+        minDate: "today",
+        monthSelectorType: "static"
+    });
+  function validateForm() {
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const nationality = document.getElementById('nationality').value;
         const guests = document.getElementById('guests').value;
-        const checkin = document.getElementById('checkin').value.trim();
-        const checkout = document.getElementById('checkout').value.trim();
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
         const selectedUnits = Array.from(document.querySelectorAll('.accommodation-checkbox:checked')).map(cb => cb.value);
+const source = document.getElementById('discovery-source').value;
 
-        if (!name || !email || !phone || !nationality || !guests || !checkin || !checkout || selectedUnits.length === 0) {
-            alert(isGreek ? 'Παρακαλούμε συμπληρώστε όλα τα υποχρεωτικά πεδία.' : 'Please fill in all required fields.');
+if (!name || !email || !phone || !nationality || !guests || !checkin || !checkout || selectedUnits.length === 0 || !source) {
+        alert(isGreek ? 'Κάτι λείπει για να μπορέσουμε να επικοινωνήσουμε μαζί σας. Παρακαλούμε συμπληρώστε όλα τα πεδία.' : `We're missing a few details to complete your booking 🌿      Could you fill them in?`);
             return false;
         }
 
+        // Ο ΕΛΕΓΧΟΣ ΠΟΥ ΛΕΙΠΕΙ (Email Validation)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+        alert(isGreek ? 'Το email δεν είναι έγκυρο.' : 'That email doesn\'t quite feel right yet... one small adjustment?');
+            return false;
+        }
+
+        // Έλεγχος Studio για 3 άτομα
         if (guests === "3" && selectedUnits.includes("Studio") && !selectedUnits.some(u => u.includes("Apartment"))) {
-            alert(isGreek ? 'Τα Studio μας φιλοξενούν έως 2 άτομα. Επιλέξτε Apartment για 3 άτομα.' : 'Studios can accommodate up to 2 guests. Please select an Apartment for 3 guests.');
+            alert(isGreek ? 'Τα Studio φιλοξενούν έως 2 άτομα.' : 'Our Studios can accommodate up to 2 guests.');
             return false;
         }
         return true;
@@ -1482,15 +1454,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sendWhatsappButton.addEventListener('click', () => {
         if (!validateForm()) return;
+        
         const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value; 
+        const nationality = document.getElementById('nationality').value;
         const phone = document.getElementById('country-code').value + document.getElementById('phone').value;
         const guests = document.getElementById('guests').value;
         const checkin = document.getElementById('checkin').value;
         const checkout = document.getElementById('checkout').value;
         const accommodation = Array.from(document.querySelectorAll('.accommodation-checkbox:checked')).map(cb => cb.value).join(', ');
+        
+        // Τραβάμε την τιμή από το discovery-source (βεβαιώσου ότι έχεις βάλει το select στο HTML)
+        const sourceElement = document.getElementById('discovery-source');
+        const source = sourceElement ? sourceElement.value : "Not specified";
+        
         const message = document.getElementById('message').value;
 
-        const text = `Κράτηση: ${name}\nΤηλ: ${phone}\nΆτομα: ${guests}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nΤύπος: ${accommodation}\nΣχόλια: ${message}`;
+        // Σύγκριση ημερομηνιών για το alert
+        const partsIn = checkin.split('/');
+        const partsOut = checkout.split('/');
+        const dateIn = new Date(partsIn[2], partsIn[1] - 1, partsIn[0]);
+        const dateOut = new Date(partsOut[2], partsOut[1] - 1, partsOut[0]);
+
+        if (dateOut <= dateIn) {
+            alert(isGreek ? 'Η ημερομηνία αναχώρησης πρέπει να είναι μετά την άφιξη.' : 'Check-out must be after Check-in.');
+            return;
+        }
+
+        const text = `Κράτηση: ${name}\nEmail: ${email}\nΕθνικότητα: ${nationality}\nΤηλ: ${phone}\nΆτομα: ${guests}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nΤύπος: ${accommodation}\nΠηγή: ${source}\nΣχόλια: ${message}`;
+        
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
     });
 
@@ -1504,7 +1496,7 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: { 'Accept': 'application/json' }
         });
         if (response.ok) {
-            alert(isGreek ? "Το μήνυμα στάλθηκε!" : "Email sent successfully!");
+            alert(isGreek ? "Το μήνυμα στάλθηκε!" : "Your booking request is floating our way... we'll get back to you soon 🌊");
             form.reset();
         }
     });
