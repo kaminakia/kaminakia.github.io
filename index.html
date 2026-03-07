@@ -32,8 +32,10 @@
       "image": "https://kaminakia.com/panoramic-sea-view-swimming-pool-kefalonia.webp",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Fiscardo, Erissos",
         "addressLocality": "Fiscardo",
-       "addressRegion": "Kefalonia",
+        "postalCode": "28084",
+        "addressRegion": "Kefalonia",
         "addressCountry": "GR"
       },
       "geo": {
@@ -43,11 +45,20 @@
       },
       "telephone": "+306959800433",
       "email": "kaminakia@yahoo.gr",
+       "priceRange": "€100+",
+       "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash",
+"aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "8.8",
+        "bestRating": "10",
+        "reviewCount": "405"
+      },
       "amenityFeature": [
         {"@type": "LocationFeatureSpecification", "name": "Sea View", "value": "true"},
         {"@type": "LocationFeatureSpecification", "name": "Swimming Pool", "value": "true"},
         {"@type": "LocationFeatureSpecification", "name": "Adults Only", "value": "true"},
-        {"@type": "LocationFeatureSpecification", "name": "Complimentary SUP Equipment", "value": "true"},
+        {"@type": "LocationFeatureSpecification", "name": "Free parking on site", "value": "true"},
         {"@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": "true"}
       ],
       "areaServed": {
@@ -55,6 +66,19 @@
         "name": "Fiscardo, Kefalonia"
       },
       "petsAllowed": "false"
+    },
+ {
+      "@type": "WebPage",
+      "name": "Kaminakia Apartments Fiscardo",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/meta[@name='description']/@content",
+          "//*[@id='welcome']/h2",
+          "//*[@id='welcome']/p[1]"
+        ]
+      },
+      "url": "https://kaminakia.com/"
     },
     {
       "@type": "WebSite",
@@ -908,6 +932,7 @@ header h1 {
     EN
    </button>
   </nav>
+<main role="main">
   <section id="welcome">
     <h2 data-el="Καλώς ορίσατε στα Καμινάκια — ένα καταφύγιο μέσα στην ήρεμη ομορφιά του Φισκάρδου." data-en="Welcome to Kaminakia, a sanctuary nestled amidst the serene beauty of Fiskardo.">
         Welcome to Kaminakia, a sanctuary nestled amidst the serene beauty of Fiskardo.
@@ -961,27 +986,26 @@ header h1 {
     <h2 data-el="Φωτογραφίες – Στιγμές Γαλήνης" data-en="Gallery - Moments of Serenity">
         Gallery - Moments of Serenity
     </h2>
-    <div class="gallery">
-        <img loading="lazy" alt="Panoramic sea-view kefalonia fiskardo" data-large-src="panoramic-sea-view-swimming-pool-kefalonia.webp" src="panoramic-sea-view-swimming-pool-kefalonia.webp"/>
-        <img loading="lazy" alt="Swimming pool with a view of the sea and mountains" data-large-src="fiskardo-apartments-sea-view-swimming-pool.webp" src="fiskardo-apartments-sea-view-swimming-pool.webp"/>
-        <img loading="lazy" alt="metal swing Kminakia Adults Only Apartments" data-large-src="kaminakia-boutique-hotel-swing.webp" src="kaminakia-boutique-hotel-swing.webp"/>
-        <img loading="lazy" alt="Cat sleeping free parking on site" data-large-src="free-parking-kaminakia-cat.webp" src="free-parking-kaminakia-cat.webp"/>
-        <img loading="lazy" alt="Lavender flowers in the garden with a distant sea view" data-large-src="nature-fiskardo-relax.webp" src="nature-fiskardo-relax.webp"/>
-        <img loading="lazy" alt="Garden pathway leading to the sea with lush greenery" data-large-src="entrance-boutique-hotel-fiskardo-kefalonia.webp" src="entrance-boutique-hotel-fiskardo-kefalonia.webp"/>
-        <img loading="lazy" alt="Traditional welcoming natural products Kaminakia" data-large-src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp" src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp"/>
-        <img loading="lazy" alt="Stone stairs surrounded by vibrant bougainvillea" data-large-src="kaminakia-apartments-entrance-staircase.webp" src="kaminakia-apartments-entrance-staircase.webp"/>
-        <img loading="lazy" alt="Sunset over the sea with a sailboat" data-large-src="veranda-sea-view-kaminakia-apartments.webp" src="veranda-sea-view-kaminakia-apartments.webp"/>
-        <img loading="lazy" alt="Romance, atmospheric evening in fiskardo" data-large-src="romantic-evening-kefalonia-apartments.webp" src="romantic-evening-kefalonia-apartments.webp"/>
-        <img loading="lazy" alt="Bedroom interior with a queen-size bed and a view to the balcony" data-large-src="studio-fiskardo-bedroom-kaminakia.webp" src="studio-fiskardo-bedroom-kaminakia.webp"/>
-        <img loading="lazy" alt="Living area and kitchen interior, designed for comfort" data-large-src="fiskardo-apartments-sofa-beds.webp" src="fiskardo-apartments-sofa-beds.webp"/>
-        <img loading="lazy" alt="Living area and kitchen interior front row" data-large-src="kaminakia-apartments-fiskardo-living-room.webp" src="kaminakia-apartments-fiskardo-living-room.webp"/>
-        <img loading="lazy" alt="Sparkling clean bathroom" data-large-src="luxury-bathroom-clean-fresh-kaminakia.webp" src="luxury-bathroom-clean-fresh-kaminakia.webp"/>
-        <img loading="lazy" alt="Kaminakia Apartments from a distance, surrounded by nature" data-large-src="drone-sea-kaminakia-fiskardo.jpg" src="drone-sea-kaminakia-fiskardo.jpg"/>
-        <img loading="lazy" alt="Booking.com high rating" data-large-src="award-gratitude-Kaminakia-top-choice.png" src="award-gratitude-Kaminakia-top-choice.png"/>
-        <img loading="lazy" alt="recommended on tripadvisor" data-large-src="recommended-on-tripadvisor.webp" src="recommended-on-tripadvisor.webp"/>
-        <img loading="lazy" alt="Certified" data-large-src="logo.png" src="logo.png"/>
-
-    </div>
+   <div class="gallery">
+    <img loading="lazy" alt="Panoramic Ionian sea view from Kaminakia Apartments Fiscardo Kefalonia" data-large-src="panoramic-sea-view-swimming-pool-kefalonia.webp" src="panoramic-sea-view-swimming-pool-kefalonia.webp"/>
+    <img loading="lazy" alt="Swimming pool with sea and mountain view at Kaminakia Adults Only Apartments" data-large-src="fiskardo-apartments-sea-view-swimming-pool.webp" src="fiskardo-apartments-sea-view-swimming-pool.webp"/>
+    <img loading="lazy" alt="Relaxing metal swing in the garden of Kaminakia Boutique Apartments Fiscardo" data-large-src="kaminakia-boutique-hotel-swing.webp" src="kaminakia-boutique-hotel-swing.webp"/>
+    <img loading="lazy" alt="Free private parking on site for guests at Kaminakia Fiscardo" data-large-src="free-parking-kaminakia-cat.webp" src="free-parking-kaminakia-cat.webp"/>
+    <img loading="lazy" alt="Lavender garden with distant sea view at Kaminakia retreat Kefalonia" data-large-src="nature-fiskardo-relax.webp" src="nature-fiskardo-relax.webp"/>
+    <img loading="lazy" alt="Garden pathway leading to the sea at Kaminakia Boutique Hotel Fiscardo" data-large-src="entrance-boutique-hotel-fiskardo-kefalonia.webp" src="entrance-boutique-hotel-fiskardo-kefalonia.webp"/>
+    <img loading="lazy" alt="Traditional welcoming with organic local products at Kaminakia Apartments" data-large-src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp" src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp"/>
+    <img loading="lazy" alt="Stone staircase with bougainvillea flowers at Kaminakia Apartments entrance" data-large-src="kaminakia-apartments-entrance-staircase.webp" src="kaminakia-apartments-entrance-staircase.webp"/>
+    <img loading="lazy" alt="Sunset sea view with sailboat from Kaminakia private veranda Fiscardo" data-large-src="veranda-sea-view-kaminakia-apartments.webp" src="veranda-sea-view-kaminakia-apartments.webp"/>
+    <img loading="lazy" alt="Romantic atmospheric evening at Kaminakia Adults Only Apartments Kefalonia" data-large-src="romantic-evening-kefalonia-apartments.webp" src="romantic-evening-kefalonia-apartments.webp"/>
+    <img loading="lazy" alt="Modern Studio interior with queen-size bed at Kaminakia Fiscardo" data-large-src="studio-fiskardo-bedroom-kaminakia.webp" src="studio-fiskardo-bedroom-kaminakia.webp"/>
+    <img loading="lazy" alt="Spacious living area and kitchen at Kaminakia Apartments front row" data-large-src="fiskardo-apartments-sofa-beds.webp" src="fiskardo-apartments-sofa-beds.webp"/>
+    <img loading="lazy" alt="Comfortable living room interior at Kaminakia sea view apartments" data-large-src="kaminakia-apartments-fiskardo-living-room.webp" src="kaminakia-apartments-fiskardo-living-room.webp"/>
+    <img loading="lazy" alt="Clean modern bathroom with fresh amenities at Kaminakia Hospitality" data-large-src="luxury-bathroom-clean-fresh-kaminakia.webp" src="luxury-bathroom-clean-fresh-kaminakia.webp"/>
+    <img loading="lazy" alt="Aerial drone view of Kaminakia Apartments and Fiscardo coastline" data-large-src="drone-sea-kaminakia-fiskardo.jpg" src="drone-sea-kaminakia-fiskardo.jpg"/>
+    <img loading="lazy" alt="Kaminakia Apartments high guest rating award on Booking.com" data-large-src="award-gratitude-Kaminakia-top-choice.png" src="award-gratitude-Kaminakia-top-choice.png"/>
+    <img loading="lazy" alt="Recommended accommodation on TripAdvisor for Fiscardo Kefalonia" data-large-src="recommended-on-tripadvisor.webp" src="recommended-on-tripadvisor.webp"/>
+    <img loading="lazy" alt="Official certification logo for Kaminakia Adults Only Apartments" data-large-src="logo.png" src="logo.png"/>
+</div>
 </section>
 
 <section id="spaces">
@@ -1271,7 +1295,7 @@ All units are adults-only, non smoking and feature private sea-view verandas.
     </a>
 </div>
 </section>
-
+</main>
 <footer>
     © 2026 Kaminakia Hospitality — Serene living by the sea.
 </footer>
