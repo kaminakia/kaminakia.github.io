@@ -149,9 +149,9 @@
   ]
 }
 </script>
-<link href="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/css2.css" rel="stylesheet">
-  <link href="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/flatpickr.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Poppins:ital,wght@0,300;0,400;0,600;1,300&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <style>
 
     html {
@@ -179,7 +179,7 @@
       --text-color: #333;
       --light-bg: #F0F8E5; 
       --dark-bg: #eee;
-      --border-color: #ccc; /
+      --border-color: #ccc;
     }
 
     h1, h2, h3 {
@@ -194,7 +194,7 @@
       flex-direction: column; 
       align-items: center;
       justify-content: center;
-      background: url('hero-fiskardo-apartments-sea-view-swimming-pool.webp') no-repeat center center;
+      background: url('https://kaminakia.com/hero-fiskardo-apartments-sea-view-swimming-pool.webp') no-repeat center center;
       background-size: cover;
       margin: 0;
       padding: 0;
@@ -204,22 +204,27 @@
     .header-background, .header-video {
       display: none;
     }
-    /* --- NAVIGATION: UNIFIED & CLEAN --- */
+    /* --- NAVIGATION --- */
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1.2rem;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px) contrast(1.2);
     -webkit-backdrop-filter: blur(15px) contrast(1.2);
-    padding: 0.1rem 0.4rem;
+    padding: 0.4rem 1.5rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 2000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex-wrap: nowrap;
 }
 
 nav a {
@@ -229,68 +234,107 @@ nav a {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
     padding: 0.5rem;
     position: relative;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: #ffd700 !important;
-    transform: translateY(-2px);
-}
+nav a:hover { color: #ffd700 !important; transform: translateY(-2px); }
 
 nav a::after {
     content: '';
     position: absolute;
-    width: 0;
-    height: 2px;
+    width: 0; height: 2px;
     background: #ffd700;
-    bottom: 0;
-    left: 50%;
+    bottom: 0; left: 50%;
     transform: translateX(-50%);
     transition: width 0.3s ease;
 }
-
-nav a:hover::after {
-    width: 100%;
-}
+nav a:hover::after { width: 100%; }
 
 #translate-button {
     color: #ffffff !important;
     font-weight: 700;
     border: 1px solid #ffffff !important;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     padding: 4px 12px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.8rem;
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
+#translate-button:hover { background: rgba(255,255,255,0.2); }
 
-#translate-button:hover {
-    background: rgba(255, 255, 255, 0.2);
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: auto;
+    z-index: 2100;
 }
+.nav-hamburger span {
+    display: block;
+    width: 24px; height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+/* Hamburger → X animation */
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media screen and (max-width: 768px) {
     nav {
-        gap: 0.4rem;
-        padding: 0.8rem 0.2rem;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0.6rem 1rem;
     }
+    .nav-hamburger { display: flex; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        background: rgba(0,0,0,0.95);
+        backdrop-filter: blur(20px);
+        padding: 70px 2rem 2rem;
+        z-index: 2000;
+    }
+    .nav-links.open { display: flex; }
     nav a {
-        font-size: 0.75rem !important;
-        padding: 0.3rem;
+        font-size: 1.1rem !important;
+        padding: 0.9rem 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    #translate-button {
+        margin-top: 1rem;
+        font-size: 1rem;
+        padding: 8px 20px;
     }
 }
 
-body {
-    padding-top: 5px; /* Ενιαίο padding για να μην κρύβεται το περιεχόμενο */
-}
+body { padding-top: 5px; }
 
 @keyframes fadeInNav {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
    
     section {
@@ -312,6 +356,23 @@ body {
       padding-top: 3rem;
       padding-bottom: 3rem;
       z-index: 1;
+    }
+
+    /* Nested accommodation sections inside #spaces should NOT look like cards */
+    section.accommodation-type {
+      background-color: transparent;
+      box-shadow: none;
+      border-radius: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(75, 95, 23, 0.15);
+    }
+    section.accommodation-type:last-of-type {
+      border-bottom: none;
+    }
+
+    #gallery {
       overflow: hidden;
     }
     
@@ -372,26 +433,58 @@ body {
 
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly larger images */
-      gap: 1.5rem; /* More gap */
-      animation: fadeIn 2s ease-in;
+      columns: 3;
+      column-gap: 1rem;
       margin-top: 2rem;
+    }
+    .gallery-awards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      padding: 1.2rem 2rem;
+      background: rgba(255,255,255,0.65);
+      border-radius: 10px;
     }
     .gallery img {
       width: 100%;
-      height: 200px; /* Fixed height for uniformity */
-      object-fit: cover; /* Covers the space */
+      display: block;
+      break-inside: avoid;
+      margin-bottom: 1rem;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* More prominent shadow */
-      transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease; /* Smoother transition */
-      cursor: pointer; /* Indicates it's clickable */
-      filter: brightness(0.9) contrast(1.1); /* Adjusted brightness and contrast */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+      filter: brightness(0.92) contrast(1.08);
     }
     .gallery img:hover {
-      transform: scale(1.03); /* Slightly smaller zoom for subtler effect */
-      filter: brightness(1.1) contrast(1.1);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transform: scale(1.02);
+      filter: brightness(1.05) contrast(1.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+    }
+    .gallery-awards a {
+      display: flex;
+      align-items: center;
+    }
+    .gallery-awards img {
+      width: auto;
+      max-height: 90px;
+      max-width: 160px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+      background: #fff;
+    }
+    .gallery-awards a:hover img { opacity: 0.85; transform: scale(1.05); }
+    @media (max-width: 768px) {
+      .gallery { columns: 2; column-gap: 0.6rem; }
+      .gallery img { margin-bottom: 0.6rem; }
+    }
+    @media (max-width: 480px) {
+      .gallery { columns: 1; }
     }
 
    
@@ -464,13 +557,17 @@ body {
       margin-top: 2rem;
     }
     input, textarea, select {
-      padding: 1rem; /* More padding */
+      padding: 0.85rem 1rem;
       border: 1px solid var(--border-color);
       border-radius: 6px;
       font-family: 'Lora', serif;
       font-size: 1em;
+      background-color: #fff;
+      color: #333;
+      box-sizing: border-box;
+      width: 100%;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
-     }
+    }
     input:focus, textarea:focus, select:focus {
       border-color: #f0f8e5; 
       box-shadow: 0 0 0 3px rgba(240, 248, 229, 0.5); 
@@ -507,24 +604,79 @@ body {
     
     .phone-input-container {
         display: flex;
-        gap: 10px;
-        align-items: center;
+        gap: 0;
+        align-items: stretch;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        overflow: hidden;
+        background: #fff;
     }
-
     .phone-input-container select {
         flex: 0 0 auto;
-        min-width: 80px;
+        width: 130px;
+        border: none !important;
+        border-right: 1px solid #ccc !important;
+        border-radius: 0 !important;
+        padding: 0.85rem 0.5rem;
+        background: #f9f9f9;
+        font-size: 0.9em;
+        box-sizing: border-box;
     }
-
     .phone-input-container input {
         flex: 1;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0.85rem 1rem;
+        box-sizing: border-box;
     }
     
+    /* Date field label styling */
+    .date-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+    .date-field label {
+        color: #fff;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 0;
+        display: block;
+    }
+    .date-field input {
+        background: #fff;
+        color: #333;
+        cursor: pointer;
+    }
+
     /* Center and space out contact links */
     .contact-links {
         text-align: center;
-        margin-top: 3rem; /* More space from the form */
-        line-height: 2.5; /* Spacing between the links */
+        margin-top: 3rem;
+        line-height: 2.5;
+    }
+
+    /* How To Reach Us button */
+    .How-to-reach-us a {
+        display: inline-block;
+        padding: 0.85rem 2rem;
+        background: #6e6c60;
+        color: #ebecd1 !important;
+        text-decoration: none;
+        border-radius: 6px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95em;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border: none !important;
+        transition: background 0.3s ease, transform 0.2s ease;
+        margin-top: 1.5rem;
+    }
+    .How-to-reach-us a:hover {
+        background: #4b5f17;
+        transform: translateY(-2px);
     }
 
     /* Footer */
@@ -708,6 +860,9 @@ header h1 {
         padding: 1rem;
         margin: 2rem auto;
       }
+      form {
+        padding: 1.2rem !important;
+      }
       h2 {
         font-size: 1.6em; /* Μικρότερο */
       }
@@ -746,17 +901,20 @@ header h1 {
       }
 
       header h1 {
-        opacity: 1 !important;         /* Εμφανίζει το "Where stillness becomes the luxury" */
+        opacity: 1 !important;
         position: relative !important;
         top: auto !important;
         margin-top: 60px !important;
         font-size: 1.5rem !important;
       }
+      header {
+        height: 70vh !important;
+      }
     }
   </style>
  </head>
  <body>
-<audio id="ambientWater" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/mus.mp3" preload="auto" loop="" muted="muted" style="position: absolute; top: -9999px; left: -9999px;"></audio>
+<audio id="ambientWater" src="https://kaminakia.com/mus.mp3" preload="auto" loop="" muted="muted" style="position: absolute; top: -9999px; left: -9999px;"></audio>
 
   <header>
    <div class="header-content-wrapper">
@@ -906,30 +1064,19 @@ header h1 {
   </div></header>
 
   <nav>
-   <a data-el="Καλωσόρισμα" data-en="Welcome" href="#welcome">
-    A Sanctuary
-   </a>
-   <a data-el="Η Φιλοσοφία μας" data-en="Our Philosophy" href="#ethos">
-    Our Philosophy
-   </a>
-   <a data-el="Ο Τόπος" data-en="Location" href="#location">
-    Location
-   </a>
-    <a data-el="Εικόνες" data-en="Gallery" href="#gallery">
-    Gallery
-   </a>
-   <a data-el="Διαμονή" data-en="Units" href="#spaces">
-    Units
-   </a>
-      <a data-el="Επικοινωνία" data-en="Contact" href="#contact">
-    Contact
-   </a>
-<a data-el="Συχνές Ερωτήσεις" data-en="FAQ" href="#faq">
-    FAQ
-   </a>
-   <button data-el="EN" data-en="GR" id="translate-button" style="background: none; border: none; color: white; font-weight: 600; cursor: pointer; transition: color 0.4s ease, transform 0.4s ease;">
-    EN
-   </button>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a data-el="Καλωσόρισμα" data-en="Welcome" href="#welcome">A Sanctuary</a>
+      <a data-el="Η Φιλοσοφία μας" data-en="Our Philosophy" href="#ethos">Our Philosophy</a>
+      <a data-el="Ο Τόπος" data-en="Location" href="#location">Location</a>
+      <a data-el="Εικόνες" data-en="Gallery" href="#gallery">Gallery</a>
+      <a data-el="Διαμονή" data-en="Units" href="#spaces">Units</a>
+      <a data-el="Επικοινωνία" data-en="Contact" href="#contact">Contact</a>
+      <a data-el="Συχνές Ερωτήσεις" data-en="FAQ" href="#faq">FAQ</a>
+      <button data-el="EN" data-en="GR" id="translate-button">EN</button>
+    </div>
   </nav>
 <main role="main">
   <section id="welcome" style="opacity: 0; transform: translateY(40px);">
@@ -1000,24 +1147,32 @@ slowly.
         Gallery - Moments of Serenity
     </h2>
    <div class="gallery">
-    <img loading="lazy" alt="Panoramic Ionian sea view from Kaminakia Apartments Fiscardo Kefalonia" data-large-src="panoramic-sea-view-swimming-pool-kefalonia.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/panoramic-sea-view-swimming-pool-kefalonia.webp">
-    <img loading="lazy" alt="Swimming pool with sea and mountain view at Kaminakia Adults Only Apartments" data-large-src="fiskardo-apartments-sea-view-swimming-pool.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/fiskardo-apartments-sea-view-swimming-pool.webp">
-    <img loading="lazy" alt="Relaxing metal swing in the garden of Kaminakia Boutique Apartments Fiscardo" data-large-src="kaminakia-boutique-hotel-swing.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/kaminakia-boutique-hotel-swing.webp">
-    <img loading="lazy" alt="Free private parking on site for guests at Kaminakia Fiscardo" data-large-src="free-parking-kaminakia-cat.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/free-parking-kaminakia-cat.webp">
-    <img loading="lazy" alt="Lavender garden with distant sea view at Kaminakia retreat Kefalonia" data-large-src="nature-fiskardo-relax.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/nature-fiskardo-relax.webp">
-    <img loading="lazy" alt="Garden pathway leading to the sea at Kaminakia Boutique Hotel Fiscardo" data-large-src="entrance-boutique-hotel-fiskardo-kefalonia.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/entrance-boutique-hotel-fiskardo-kefalonia.webp">
-    <img loading="lazy" alt="Traditional welcoming with organic local products at Kaminakia Apartments" data-large-src="traditional-welcoming-natural-products-organic-bio-kaminakia.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/traditional-welcoming-natural-products-organic-bio-kaminaki.webp">
-    <img loading="lazy" alt="Stone staircase with bougainvillea flowers at Kaminakia Apartments entrance" data-large-src="kaminakia-apartments-entrance-staircase.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/kaminakia-apartments-entrance-staircase.webp">
-    <img loading="lazy" alt="Sunset sea view with sailboat from Kaminakia private veranda Fiscardo" data-large-src="veranda-sea-view-kaminakia-apartments.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/veranda-sea-view-kaminakia-apartments.webp">
-    <img loading="lazy" alt="Romantic atmospheric evening at Kaminakia Adults Only Apartments Kefalonia" data-large-src="romantic-evening-kefalonia-apartments.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/romantic-evening-kefalonia-apartments.webp">
-    <img loading="lazy" alt="Modern Studio interior with queen-size bed at Kaminakia Fiscardo" data-large-src="studio-fiskardo-bedroom-kaminakia.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/studio-fiskardo-bedroom-kaminakia.webp">
-    <img loading="lazy" alt="Spacious living area and kitchen at Kaminakia Apartments front row" data-large-src="fiskardo-apartments-sofa-beds.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/fiskardo-apartments-sofa-beds.webp">
-    <img loading="lazy" alt="Comfortable living room interior at Kaminakia sea view apartments" data-large-src="kaminakia-apartments-fiskardo-living-room.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/kaminakia-apartments-fiskardo-living-room.webp">
-    <img loading="lazy" alt="Clean modern bathroom with fresh amenities at Kaminakia Hospitality" data-large-src="luxury-bathroom-clean-fresh-kaminakia.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/luxury-bathroom-clean-fresh-kaminakia.webp">
-    <img loading="lazy" alt="Aerial drone view of Kaminakia Apartments and Fiscardo coastline" data-large-src="drone-sea-kaminakia-fiskardo.jpg" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/drone-sea-kaminakia-fiskardo.jpg">
-    <img loading="lazy" alt="Kaminakia Apartments high guest rating award on Booking.com" data-large-src="award-gratitude-Kaminakia-top-choice.png" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/award-gratitude-Kaminakia-top-choice.png">
-    <img loading="lazy" alt="Recommended accommodation on TripAdvisor for Fiscardo Kefalonia" data-large-src="recommended-on-tripadvisor.webp" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/recommended-on-tripadvisor.webp">
-    <img loading="lazy" alt="Official certification logo for Kaminakia Adults Only Apartments" data-large-src="logo.png" src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/logo.png">
+    <img loading="lazy" alt="Panoramic Ionian sea view from Kaminakia Apartments Fiscardo Kefalonia" data-large-src="https://kaminakia.com/panoramic-sea-view-swimming-pool-kefalonia.webp" src="https://kaminakia.com/panoramic-sea-view-swimming-pool-kefalonia.webp">
+    <img loading="lazy" alt="Stone staircase with bougainvillea flowers at Kaminakia Apartments entrance" data-large-src="https://kaminakia.com/kaminakia-apartments-entrance-staircase.webp" src="https://kaminakia.com/kaminakia-apartments-entrance-staircase.webp">
+    <img loading="lazy" alt="Garden pathway leading to the sea at Kaminakia Boutique Hotel Fiscardo" data-large-src="https://kaminakia.com/entrance-boutique-hotel-fiskardo-kefalonia.webp" src="https://kaminakia.com/entrance-boutique-hotel-fiskardo-kefalonia.webp">
+    <img loading="lazy" alt="Swimming pool with sea and mountain view at Kaminakia Adults Only Apartments" data-large-src="https://kaminakia.com/fiskardo-apartments-sea-view-swimming-pool.webp" src="https://kaminakia.com/fiskardo-apartments-sea-view-swimming-pool.webp">
+    <img loading="lazy" alt="Sunset sea view with sailboat from Kaminakia private veranda Fiscardo" data-large-src="https://kaminakia.com/veranda-sea-view-kaminakia-apartments.webp" src="https://kaminakia.com/veranda-sea-view-kaminakia-apartments.webp">
+    <img loading="lazy" alt="Lavender garden with distant sea view at Kaminakia retreat Kefalonia" data-large-src="https://kaminakia.com/nature-fiskardo-relax.webp" src="https://kaminakia.com/nature-fiskardo-relax.webp">
+    <img loading="lazy" alt="Relaxing metal swing in the garden of Kaminakia Boutique Apartments Fiscardo" data-large-src="https://kaminakia.com/kaminakia-boutique-hotel-swing.webp" src="https://kaminakia.com/kaminakia-boutique-hotel-swing.webp">
+    <img loading="lazy" alt="Romantic atmospheric evening at Kaminakia Adults Only Apartments Kefalonia" data-large-src="https://kaminakia.com/romantic-evening-kefalonia-apartments.webp" src="https://kaminakia.com/romantic-evening-kefalonia-apartments.webp">
+    <img loading="lazy" alt="Aerial drone view of Kaminakia Apartments and Fiscardo coastline" data-large-src="https://kaminakia.com/drone-sea-kaminakia-fiskardo.jpg" src="https://kaminakia.com/drone-sea-kaminakia-fiskardo.jpg">
+    <img loading="lazy" alt="Traditional welcoming with organic local products at Kaminakia Apartments" data-large-src="https://kaminakia.com/traditional-welcoming-natural-products-organic-bio-kaminakia.webp" src="https://kaminakia.com/traditional-welcoming-natural-products-organic-bio-kaminakia.webp">
+    <img loading="lazy" alt="Modern Studio interior with queen-size bed at Kaminakia Fiscardo" data-large-src="https://kaminakia.com/studio-fiskardo-bedroom-kaminakia.webp" src="https://kaminakia.com/studio-fiskardo-bedroom-kaminakia.webp">
+    <img loading="lazy" alt="Spacious living area and kitchen at Kaminakia Apartments front row" data-large-src="https://kaminakia.com/fiskardo-apartments-sofa-beds.webp" src="https://kaminakia.com/fiskardo-apartments-sofa-beds.webp">
+    <img loading="lazy" alt="Comfortable living room interior at Kaminakia sea view apartments" data-large-src="https://kaminakia.com/kaminakia-apartments-fiskardo-living-room.webp" src="https://kaminakia.com/kaminakia-apartments-fiskardo-living-room.webp">
+    <img loading="lazy" alt="Free private parking on site for guests at Kaminakia Fiscardo" data-large-src="https://kaminakia.com/free-parking-kaminakia-cat.webp" src="https://kaminakia.com/free-parking-kaminakia-cat.webp">
+    <img loading="lazy" alt="Clean modern bathroom with fresh amenities at Kaminakia Hospitality" data-large-src="https://kaminakia.com/luxury-bathroom-clean-fresh-kaminakia.webp" src="https://kaminakia.com/luxury-bathroom-clean-fresh-kaminakia.webp">
+</div>
+<div class="gallery-awards">
+    <a href="https://www.booking.com/hotel/gr/kaminakia-apartments-fiskardo-kefalonia.html#tab-reviews" target="_blank" rel="noopener">
+        <img loading="lazy" alt="Kaminakia Apartments high guest rating award on Booking.com" src="https://kaminakia.com/award-gratitude-Kaminakia-top-choice.png">
+    </a>
+    <a href="https://www.tripadvisor.co.uk/Hotel_Review-g776022-d616699-Reviews-Kaminakia_Adults_Only_Apartments-Fiscardo_Kefalonia_Ionian_Islands.html" target="_blank" rel="noopener">
+        <img loading="lazy" alt="Recommended accommodation on TripAdvisor for Fiscardo Kefalonia" src="https://kaminakia.com/recommended-on-tripadvisor.webp">
+    </a>
+    <a href="https://kaminakia.com" target="_blank" rel="noopener">
+        <img loading="lazy" alt="Official certification logo for Kaminakia Adults Only Apartments" src="https://kaminakia.com/logo.png">
+    </a>
 </div>
 </section>
 
@@ -1274,11 +1429,14 @@ should you find our calendar occasionally full.
     <option value="3">3</option>
 </select>
 
-<label for="checkin">Check-in:</label>
-<input id="checkin" name="checkin" required="true" type="text" placeholder="DD/MM/YYYY" class="flatpickr-input" readonly="readonly">
-
-<label for="checkout">Check-out:</label>
-<input id="checkout" name="checkout" required="true" type="text" placeholder="DD/MM/YYYY" class="flatpickr-input" readonly="readonly">
+<div class="date-field">
+  <label for="checkin">Check-in</label>
+  <input id="checkin" name="checkin" required="true" type="text" placeholder="DD / MM / YYYY" class="flatpickr-input" readonly="readonly">
+</div>
+<div class="date-field">
+  <label for="checkout">Check-out</label>
+  <input id="checkout" name="checkout" required="true" type="text" placeholder="DD / MM / YYYY" class="flatpickr-input" readonly="readonly">
+</div>
 
 <p>Preferred Accommodation Type:</p>
 <label>
@@ -1315,16 +1473,14 @@ should you find our calendar occasionally full.
 </div>
 </form>
 
-<div class="How-to-reach-us" style="text-align: center; margin-top: 20px;">
-    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=38.4555,20.5755" target="_blank" style="display: inline-block; padding: 10px 20px; border: 1px solid var(--secondary-color); color: var(--secondary-color); text-decoration: none; border-radius: 4px; font-family: 'Poppins', sans-serif;">
-        How To Reach Us
+<div class="How-to-reach-us" style="text-align: center; margin-top: 0.5rem;">
+    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=38.4555,20.5755" target="_blank">
+        <i class="fas fa-map-marker-alt" style="margin-right:6px;"></i>How To Reach Us
     </a>
 </div>
 </section>
 </main>
-<footer>
-    © 2026 Kaminakia Hospitality — Serene living by the sea.
-</footer>
+
 
 <div class="audio-control">
     <i class="fas fa-volume-mute" id="mute-toggle"></i>
@@ -1337,7 +1493,7 @@ should you find our calendar occasionally full.
     <img alt="Large image" src="">
 </div>
 
-<script src="Kaminakia%20Adults%20Only%20Apartments%20_%20Fiscardo%20-%20Kefalonia_files/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Parallax Effect
@@ -1407,12 +1563,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-            } else {
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(40px)';
+                sectionObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
     sections.forEach(section => sectionObserver.observe(section));
 
     // Audio Control
@@ -1428,6 +1582,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 audio.muted = !audio.muted;
                 muteToggle.className = audio.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
             }
+        });
+    }
+
+    // Hamburger menu
+    const hamburger = document.getElementById('nav-hamburger');
+    const navLinks = document.getElementById('nav-links');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+        // Close on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
         });
     }
 
@@ -1648,9 +1819,9 @@ if (!name || !email || !phone || !nationality || !guests || !checkin || !checkou
         color: #666;
         line-height: 1.7;
         font-size: 0.95rem;
-        animation: fadeIn 0.5s ease;
+        animation: faqFadeIn 0.5s ease;
     }
-    @keyframes fadeIn {
+    @keyframes faqFadeIn {
         from { opacity: 0; transform: translateY(-5px); }
         to { opacity: 1; transform: translateY(0); }
     }
@@ -1712,15 +1883,13 @@ We also provide free private parking within our premises for all guests.
             </div>
         </details>
     </div>
-</section>
+</section> <footer style="text-align: center; padding: 40px 20px; background: #f9f9f9; color: #555; border-top: 1px solid #eee; clear: both; position: relative; line-height: 1.8; font-family: 'Poppins', sans-serif;">
+    © 2026 Kaminakia Hospitality — Serene living by the sea.<br>
+    <strong>ΚΑΜΙΝΑΚΙΑ HOSPITALITY ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.</strong><br>
+    ΠΑΝΟΡΜΟΥ 115, Τ.Κ. 28084, ΦΙΣΚΑΡΔΟ-ΚΕΦΑΛΟΝΙΑ<br>
+    ΑΦΜ: 803229662 ΔΟΥ: ΑΡΓΟΣΤΟΛΙΟΥ<br>
+    Αριθμός ΓΕΜΗ: 192584234000
+</footer>
 
-
-<div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1" selected="selected">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year" min="2026" value="2026"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
-      <span class="flatpickr-weekday">
-        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
-      </span>
-      </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="March 29, 2026">29</span><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="March 30, 2026">30</span><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="March 31, 2026">31</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 1, 2026">1</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 2, 2026">2</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 3, 2026">3</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 4, 2026">4</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 5, 2026">5</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 6, 2026">6</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 7, 2026">7</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 8, 2026">8</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 9, 2026">9</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 10, 2026">10</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 11, 2026">11</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 12, 2026">12</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 13, 2026">13</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 14, 2026">14</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 15, 2026">15</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 16, 2026">16</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 17, 2026">17</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 18, 2026">18</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 19, 2026">19</span><span class="flatpickr-day today" aria-label="April 20, 2026" aria-current="date" tabindex="-1">20</span><span class="flatpickr-day" aria-label="April 21, 2026" tabindex="-1">21</span><span class="flatpickr-day" aria-label="April 22, 2026" tabindex="-1">22</span><span class="flatpickr-day" aria-label="April 23, 2026" tabindex="-1">23</span><span class="flatpickr-day" aria-label="April 24, 2026" tabindex="-1">24</span><span class="flatpickr-day" aria-label="April 25, 2026" tabindex="-1">25</span><span class="flatpickr-day" aria-label="April 26, 2026" tabindex="-1">26</span><span class="flatpickr-day" aria-label="April 27, 2026" tabindex="-1">27</span><span class="flatpickr-day" aria-label="April 28, 2026" tabindex="-1">28</span><span class="flatpickr-day" aria-label="April 29, 2026" tabindex="-1">29</span><span class="flatpickr-day" aria-label="April 30, 2026" tabindex="-1">30</span><span class="flatpickr-day nextMonthDay" aria-label="May 1, 2026" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="May 2, 2026" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="May 3, 2026" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="May 4, 2026" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="May 5, 2026" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="May 6, 2026" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="May 7, 2026" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="May 8, 2026" tabindex="-1">8</span><span class="flatpickr-day nextMonthDay" aria-label="May 9, 2026" tabindex="-1">9</span></div></div></div></div></div><div class="flatpickr-calendar animate" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month flatpickr-disabled"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><span class="cur-month">April </span><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year" min="2026" value="2026"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
-      <span class="flatpickr-weekday">
-        Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
-      </span>
-      </div></div><div class="flatpickr-days" tabindex="-1"><div class="dayContainer"><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="March 29, 2026">29</span><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="March 30, 2026">30</span><span class="flatpickr-day prevMonthDay flatpickr-disabled" aria-label="March 31, 2026">31</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 1, 2026">1</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 2, 2026">2</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 3, 2026">3</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 4, 2026">4</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 5, 2026">5</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 6, 2026">6</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 7, 2026">7</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 8, 2026">8</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 9, 2026">9</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 10, 2026">10</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 11, 2026">11</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 12, 2026">12</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 13, 2026">13</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 14, 2026">14</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 15, 2026">15</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 16, 2026">16</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 17, 2026">17</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 18, 2026">18</span><span class="flatpickr-day flatpickr-disabled" aria-label="April 19, 2026">19</span><span class="flatpickr-day today" aria-label="April 20, 2026" aria-current="date" tabindex="-1">20</span><span class="flatpickr-day" aria-label="April 21, 2026" tabindex="-1">21</span><span class="flatpickr-day" aria-label="April 22, 2026" tabindex="-1">22</span><span class="flatpickr-day" aria-label="April 23, 2026" tabindex="-1">23</span><span class="flatpickr-day" aria-label="April 24, 2026" tabindex="-1">24</span><span class="flatpickr-day" aria-label="April 25, 2026" tabindex="-1">25</span><span class="flatpickr-day" aria-label="April 26, 2026" tabindex="-1">26</span><span class="flatpickr-day" aria-label="April 27, 2026" tabindex="-1">27</span><span class="flatpickr-day" aria-label="April 28, 2026" tabindex="-1">28</span><span class="flatpickr-day" aria-label="April 29, 2026" tabindex="-1">29</span><span class="flatpickr-day" aria-label="April 30, 2026" tabindex="-1">30</span><span class="flatpickr-day nextMonthDay" aria-label="May 1, 2026" tabindex="-1">1</span><span class="flatpickr-day nextMonthDay" aria-label="May 2, 2026" tabindex="-1">2</span><span class="flatpickr-day nextMonthDay" aria-label="May 3, 2026" tabindex="-1">3</span><span class="flatpickr-day nextMonthDay" aria-label="May 4, 2026" tabindex="-1">4</span><span class="flatpickr-day nextMonthDay" aria-label="May 5, 2026" tabindex="-1">5</span><span class="flatpickr-day nextMonthDay" aria-label="May 6, 2026" tabindex="-1">6</span><span class="flatpickr-day nextMonthDay" aria-label="May 7, 2026" tabindex="-1">7</span><span class="flatpickr-day nextMonthDay" aria-label="May 8, 2026" tabindex="-1">8</span><span class="flatpickr-day nextMonthDay" aria-label="May 9, 2026" tabindex="-1">9</span></div></div></div></div></div></body></html>
+</body>
+</html>
